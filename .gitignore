@@ -1,2 +1,2 @@
-\reports
-scripts\make_figures.py
+/reports/
+scripts/make_figures.py
