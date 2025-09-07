@@ -17,12 +17,12 @@ def main():
         from acl_scaffold import report
 
         ap = argparse.ArgumentParser(description="Run full analysis pipeline")
-        ap.add_argument("--xlsx", required=True, help="Percorso al file Excel dei dati")
-        ap.add_argument("--outdir", default="reports", help="Cartella output")
+        ap.add_argument("--xlsx", required=True, help="Path")
+        ap.add_argument("--outdir", default="reports", help="Output directory")
         ap.add_argument("--backend", choices=["cpu", "gpu"], default="cpu",
-                        help="Motore ML: cpu=scikit-learn RF, gpu=XGBoost")
+                        help="ML backend: cpu=scikit-learn RF, gpu=XGBoost")
         ap.add_argument("--permimp-all", action="store_true",
-                        help="Calcola permutation importance per tutte le variabili meccaniche (non solo Fmax)")
+                        help="Calculate permutation importance for all mechanical variables (not just Fmax)")
         args = ap.parse_args()
 
         print(f"[run] xlsx={args.xlsx}")
@@ -44,4 +44,4 @@ if __name__ == "__main__":
     main()
 
 
-#python .\scripts\analysis.py --backend gpu --permimp-all --xlsx ".\data\Matrice_risultati.xlsx" --outdir ".\reports"
+#python .\scripts\analysis.py --backend gpu --permimp-all --xlsx ".\data\Matrix.xlsx" --outdir ".\reports"
