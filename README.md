@@ -1,5 +1,5 @@
 
-# ACL Scaffold - Analysis and Modeling
+# Anterior Cruciate Ligmanent (ACL) Scaffold - Analysis and Modeling
 
 ## Description
 This project provides a complete pipeline for statistical analysis, predictive modeling, and ranking of ACL scaffolds, starting from experimental data in Excel format.
