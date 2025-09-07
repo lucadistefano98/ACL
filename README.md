@@ -30,4 +30,4 @@ report.run_all("data/Matrice_risultati.xlsx", "reports/")
 ```
 
 ## Author
-Simone Micalizzi 
+Simone Micalizzi, Luca Di Stefano
