@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 
-# Default: tutti i criteri "benefit" (maggiore è meglio). Puoi personalizzare.
 DEFAULT_BENEFIT = True
 
 def _orient(df: pd.DataFrame, benefit_mask: dict[str, bool]):
@@ -12,7 +11,7 @@ def _orient(df: pd.DataFrame, benefit_mask: dict[str, bool]):
         if c not in X.columns: continue
         X[c] = pd.to_numeric(X[c], errors="coerce")
         if not is_benefit:
-            X[c] = -X[c]   # trasformo criterio "costo" in "benefit"
+            X[c] = -X[c]  
     return X
 
 def group_means(dati: pd.DataFrame, group_col: str, criteria: list[str]):
@@ -57,7 +56,6 @@ def promethee_ii(df_alt: pd.DataFrame, criteria: list[str],
         for k in range(m):
             if i == k: continue
             d = X[i, :] - X[k, :]
-            # preferenza lineare per criterio
             pj = np.clip(d / s, 0, 1)
             P[i, k] = float(np.sum(w * pj))
     phi_plus  = P.mean(axis=1)
